@@ -1,10 +1,13 @@
-package com.example.novochat;
+package com.activitys;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
+
+import com.example.novochat.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,4 +31,25 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_principal, menu);
         return true;
     }
+
+    /* Colocando eventos nos botões do menu.
+     * Recebe um item do tipo MenuItem
+     * getItemId recupera qual o id(botão) selecionado */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item_logout:
+                logoutUser();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    /* Simulando um logout - sairei do app para essa simulação
+     * Quando implementar o firebase conserto o logout */
+    public void logoutUser(){
+        finish();
+    }
 }
+

@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">NovoChat</string>
+    <string name="app_name">Novo Chat</string>
+    <string name="item_menu_login">Login</string>
+    <string name="item_menu_register">Cadastro</string>
+    <string name="item_menu_logout">Logout</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_sair">Sair</string>
+    <string name="item_search">Pesquisa</string>
+    <string name="item_add">Adicionar</string>
+    <string name="image_logo"/>
+    <string name="botao_login">Entrar</string>
+    <string name="register_acount">Não tem uma conta? Crie aqui!</string>
+    <string name="digite_o_email">Digite o email</string>
+    <string name="digite_a_senha">Digite a senha</string>
 </resources>
