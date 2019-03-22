@@ -3,19 +3,21 @@
     xmlns:app="http://schemas.android.com/tools/"
     xmlns:app1="http://schemas.android.com/apk/res-auto">
 
-   <item android:id="@+id/action_settings" android:title="@string/action_settings"
-       android:orderInCategory="100" app:showAsAction="never"/>
+   <item android:id="@+id/action_settings"
+       android:title="@string/action_settings"
+       android:orderInCategory="100"
+       app:showAsAction="never"/>
 
    <item android:id="@+id/item_logout"
       android:title="@string/action_sair"
       android:orderInCategory="200"
       app1:showAsAction="never"/>
 
-   <item android:id="@+id/item_serach"
-      android:title="@string/item_search"
+   <item android:id="@+id/item_enter"
+      android:title="@string/item_enter"
       android:orderInCategory="300"
       app1:showAsAction="ifRoom"
-       android:icon="@drawable/ic_search"/>
+      android:icon="@drawable/ic_forward"/>
 
    <item android:id="@+id/item_add"
        android:title="@string/item_add"

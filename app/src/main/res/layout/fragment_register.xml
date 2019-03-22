@@ -1,0 +1,63 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fragments.RegisterFragment">
+    <android.support.constraint.ConstraintLayout
+        android:background="@color/fundoLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/emailRegister"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/fundo_edittext_redondo"
+            android:ems="10"
+            android:hint="@string/digite_o_email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/passwordRegister"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/fundo_edittext_redondo"
+            android:ems="10"
+            android:hint="@string/digite_a_senha"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/emailRegister"
+            app:layout_constraintStart_toStartOf="@+id/emailRegister"
+            app:layout_constraintTop_toBottomOf="@+id/emailRegister" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/fundo_botao"
+            android:text="@string/botao_register"
+            android:textColor="@color/fundoLogin"
+            app:layout_constraintEnd_toEndOf="@+id/passwordRegister"
+            app:layout_constraintStart_toStartOf="@+id/passwordRegister"
+            app:layout_constraintTop_toBottomOf="@+id/passwordRegister" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="256dp"
+            android:layout_height="286dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/marca"
+            app:layout_constraintEnd_toEndOf="@+id/passwordRegister"
+            app:layout_constraintStart_toStartOf="@+id/passwordRegister"
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>
