@@ -2,15 +2,22 @@ package com.fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.novochat.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +25,7 @@ import com.example.novochat.R;
 public class LoginFragment extends Fragment {
 
 
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
     private EditText emailLogin;
     private EditText passwordLogin;
     private Button btnLogin;
@@ -36,9 +44,36 @@ public class LoginFragment extends Fragment {
             emailLogin = view.findViewById(R.id.login_email);
             passwordLogin = view.findViewById(R.id.login_password);
             btnLogin = view.findViewById(R.id.btnLogin);
-            txtCrieAqui = view.findViewById(R.id.txtRegister);
+
+            btnLogin.setOnClickListener(click);
         return view;
     }
 
-    //TODO - Criar métodos de LOGIN
+    View.OnClickListener click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            loginUser();
+        }
+    };
+
+    public void loginUser(){
+        String email = emailLogin.getText().toString();
+        String password = passwordLogin.getText().toString();
+
+        auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Log.i("loginUser: ", "Sucesso!");
+                            Toast.makeText(getActivity(), "Usuário Logado!", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Log.i("loginUser: ", "Falha!");
+                            Toast.makeText(getActivity(), "Usuário não Logado!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
+    //TODO - Criar meios de autenticação do Login
 }

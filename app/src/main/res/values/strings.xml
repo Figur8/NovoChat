@@ -8,8 +8,8 @@
     <string name="item_enter">Entrar</string>
     <string name="item_add">Adicionar</string>
     <string name="image_logo" />
-    <string name="text_login" >LOGIN</string>
-    <string name="text_register" >REGISTRAR</string>
+    <string name="text_login">LOGIN</string>
+    <string name="text_register">REGISTRAR</string>
     <string name="botao_login">Entrar</string>
     <string name="botao_register">Registrar</string>
     <string name="register_acount">Não tem uma conta? Crie aqui!</string>
